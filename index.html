@@ -73,27 +73,7 @@
             }
         }
     </style>
-     <script>
-        window.addEventListener("load", function() {
-            const image = document.querySelector("img[usemap]"); // Select the image with the map
-            const areas = document.querySelectorAll("area"); // Select all area elements
-
-            function updateAreaCoordinates() {
-                const imageRect = image.getBoundingClientRect(); // Get the current image size
-                areas.forEach(area => {
-                    const coords = area.getAttribute("coords").split(","); // Get the original coordinates
-                    const updatedCoords = coords.map((coord, index) => {
-                        return Math.round((coord / imageRect.width) * 100); // Scale the coordinates
-                    }).join(",");
-                    area.setAttribute("coords", updatedCoords); // Set the new scaled coordinates
-                });
-            }
-
-            // Update the coordinates when the window is resized or the page is loaded
-            window.addEventListener("resize", updateAreaCoordinates);
-            updateAreaCoordinates(); // Initial call to set the coordinates
-        });
-    </script>
+     
     
 </head>
 <body>
